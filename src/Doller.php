@@ -14,5 +14,10 @@ class Doller
     {
         return new self($this->amount * $multiplier);
     }
+
+    public function equals(Doller $doller)
+    {
+        return $this->amount === $doller->amount;
+    }
 }
 
