@@ -10,9 +10,9 @@ class Doller
         $this->amount = $amount;
     }
 
-    public function times(int $multiplier)
+    public function times(int $multiplier) : Doller
     {
-        $this->amount *= $multiplier;
+        return new self($this->amount * $multiplier);
     }
 }
 
