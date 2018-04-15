@@ -3,7 +3,7 @@ namespace Money;
 
 class Doller
 {
-    public $amount;
+    private $amount;
 
     public function __construct(int $amount)
     {
