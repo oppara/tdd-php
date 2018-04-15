@@ -1,0 +1,20 @@
+{
+    "name": "oppara/tdd",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "Money\\": "src/"
+      }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Money\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always"
+    }
+}
