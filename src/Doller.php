@@ -3,14 +3,14 @@ namespace Money;
 
 class Doller extends Money
 {
-    public function __construct(int $amount)
+    public function __construct(int $amount, string $currency)
     {
-        $this->amount = $amount;
+        parent::__construct($amount, $currency);
     }
 
     public function times(int $multiplier) : Money
     {
-        return new self($this->amount * $multiplier);
+        return Money::doller($this->amount * $multiplier);
     }
 }
 
