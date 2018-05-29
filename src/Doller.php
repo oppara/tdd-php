@@ -8,9 +8,5 @@ class Doller extends Money
         parent::__construct($amount, $currency);
     }
 
-    public function times(int $multiplier) : Money
-    {
-        return Money::doller($this->amount * $multiplier);
-    }
 }
 
