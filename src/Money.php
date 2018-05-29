@@ -1,7 +1,7 @@
 <?php
 namespace Money;
 
-abstract class Money
+class Money
 {
     protected $amount;
     protected $currency;
@@ -15,10 +15,13 @@ abstract class Money
     public function equals(Money $money) : bool
     {
         return $this->amount === $money->amount
-            && get_class($this) === get_class($money);
+            && $this->currency() === $money->currency();
     }
 
-    public abstract function times(int $multiplier) : Money;
+    public function times(int $multiplier) : Money
+    {
+        return new Money($this->amount * $multiplier, $this->currency);
+    }
 
     public function currency() : String
     {
@@ -34,5 +37,6 @@ abstract class Money
     {
         return new Franc($amount, 'CHF');
     }
+
 }
 
