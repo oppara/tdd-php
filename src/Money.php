@@ -30,12 +30,12 @@ class Money
 
     public static function doller(int $amount) : Money
     {
-        return new Doller($amount, 'USD');
+        return new Money($amount, 'USD');
     }
 
     public static function franc(int $amount) : Money
     {
-        return new Franc($amount, 'CHF');
+        return new Money($amount, 'CHF');
     }
 
 }
