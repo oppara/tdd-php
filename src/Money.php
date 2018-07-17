@@ -6,7 +6,7 @@ namespace Money;
 
 class Money implements Expression
 {
-    protected $amount;
+    public $amount;
     protected $currency;
 
     public function __construct(int $amount, string $currency)
@@ -33,7 +33,7 @@ class Money implements Expression
 
     public function plus(Money $addend): Expression
     {
-        return new Money($this->amount + $addend->amount, $this->currency);
+        return new Sum($this, $addend);
     }
 
     public static function doller(int $amount) : Money
@@ -46,5 +46,8 @@ class Money implements Expression
         return new Money($amount, 'CHF');
     }
 
+    public function reduce(String $to): Money
+    {
+        return $this;
+    }
 }
-
