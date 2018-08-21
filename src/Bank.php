@@ -17,7 +17,7 @@ class Bank
         return $source->reduce($this, $to);
     }
 
-    public function addRate(String $from, String $to, Int $rate): void
+    public function addRate(String $from, String $to, Int $rate)
     {
         $this->rates->put(Pair::create($from, $to), $rate);
     }
